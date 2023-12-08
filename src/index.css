@@ -5,6 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: rgb(255, 244, 228);
+
+}
 
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Playfair Display', serif; */
@@ -108,7 +112,7 @@
 .contactus {
   margin: 0;
   padding: 0;
-  height: 70vh;
+  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;

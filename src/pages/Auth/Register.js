@@ -16,6 +16,7 @@ const Register = () => {
   // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     try {
       const res = await axios.post("/api/auth/register", {
         name,
@@ -27,6 +28,7 @@ const Register = () => {
       });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
+        
         navigate("/login");
       } else {
         toast.error(res.data.message);
@@ -39,11 +41,11 @@ const Register = () => {
 
   return (
     <Layout title="Register - ACVenture">
-      <div className="form-container" style={{ minHeight: "90vh" }}>
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">REGISTER FORM</h4>
-          <div className="mb-3">
-            <input
+       <div className="form-container" style={{ minHeight: "90vh" }}>
+         <form onSubmit={handleSubmit}>
+           <h4 className="title">REGISTER FORM</h4>
+           <div className="mb-3">
+             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -53,9 +55,9 @@ const Register = () => {
               required
               autoFocus
             />
-          </div>
-          <div className="mb-3">
-            <input
+           </div>
+           <div className="mb-3">
+             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -64,9 +66,9 @@ const Register = () => {
               placeholder="Enter Your Email "
               required
             />
-          </div>
-          <div className="mb-3">
-            <input
+           </div>
+           <div className="mb-3">
+             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -108,14 +110,16 @@ const Register = () => {
               placeholder="What is Your Favorite sports"
               required
             />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            REGISTER
-          </button>
-        </form>
-      </div>
+        </div>
+       <button type="submit" className="btn btn-primary">
+          REGISTER
+         </button>
+     </form>
+    </div>
     </Layout>
   );
 };
 
 export default Register;
+
+

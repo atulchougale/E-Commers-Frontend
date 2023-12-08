@@ -36,6 +36,7 @@ const HomePage = () => {
     getAllCategory();
     getTotal();
   }, []);
+
   //get products
   const getAllProducts = async () => {
     try {
@@ -63,6 +64,7 @@ const HomePage = () => {
     if (page === 1) return;
     loadMore();
   }, [page]);
+
   //load more
   const loadMore = async () => {
     try {
@@ -86,6 +88,7 @@ const HomePage = () => {
     }
     setChecked(all);
   };
+
   useEffect(() => {
     if (!checked.length || !radio.length) getAllProducts();
   }, [checked.length, radio.length]);
@@ -94,7 +97,7 @@ const HomePage = () => {
     if (checked.length || radio.length) filterProduct();
   }, [checked, radio]);
 
-  //get filterd product
+  // get filtered product
   const filterProduct = async () => {
     try {
       const { data } = await axios.post("/api/product/product-filters", {
@@ -106,8 +109,10 @@ const HomePage = () => {
       console.log(error);
     }
   };
+
   return (
     <Layout title={"ALl Products - Best offers "}>
+   
       {/* banner image */}
       <img
         src="/images/banner.png"
@@ -129,6 +134,7 @@ const HomePage = () => {
               </Checkbox>
             ))}
           </div>
+          
           {/* price filter */}
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
@@ -153,7 +159,7 @@ const HomePage = () => {
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card m-2" key={p._id}>
+              <div className="card m-2" >
                 <img
                   src={`/api/product/product-photo/${p._id}`}
                   className="card-img-top"
@@ -165,7 +171,7 @@ const HomePage = () => {
                     <h5 className="card-title card-price">
                       {p.price.toLocaleString("en-US", {
                         style: "currency",
-                        currency: "USD",
+                        currency: "INR",
                       })}
                     </h5>
                   </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import AdminMenu from "./../../components/layout/AdminMenu";
 import Layout from "./../../components/layout/Layout";
 import { useAuth } from "../../context/auth";
@@ -13,15 +13,15 @@ const AdminOrders = () => {
     "Not Process",
     "Processing",
     "Shipped",
-    "deliverd",
+    "delivered",
     "cancel",
   ]);
-  const [changeStatus, setCHangeStatus] = useState("");
+//   const [changeStatus, setCHangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
   const [auth, setAuth] = useAuth();
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("/api/v1/auth/all-orders");
+      const { data } = await axios.get("/api/auth/all-orders");
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ const AdminOrders = () => {
           <h1 className="text-center">All Orders</h1>
           {orders?.map((o, i) => {
             return (
-              <div className="border shadow">
+              <div className="border shadow p-3">
                 <table className="table">
                   <thead>
                     <tr>
@@ -92,7 +92,7 @@ const AdminOrders = () => {
                     <div className="row mb-2 p-3 card flex-row" key={p._id}>
                       <div className="col-md-4">
                         <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
+                          src={`/api/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
                           width="100px"

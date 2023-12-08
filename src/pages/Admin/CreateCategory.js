@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./../../components/layout/Layout";
-import AdminMenu from "./../../components/layout/AdminMenu";
 import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Form/CategoryForm";
+import AdminMenu from "../../components/layout/AdminMenu";
 import { Modal } from "antd";
+
+
 const CreateCategory = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(null);
   const [updatedName, setUpdatedName] = useState("");
+  
   //handle Form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +29,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       console.log(error);
-      // toast.error("somthing went wrong in input form");
+      toast.error("something went wrong in input form");
     }
   };
 
@@ -39,7 +42,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something wwent wrong in getting catgeory");
+      toast.error("Something went wrong in getting category");
     }
   };
 
@@ -68,6 +71,7 @@ const CreateCategory = () => {
       console.log(error);
     }
   };
+
   //delete category
   const handleDelete = async (pId) => {
     try {
@@ -82,7 +86,7 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error("Somtihing went wrong");
+      toast.error("Something went wrong");
     }
   };
   return (
@@ -143,7 +147,7 @@ const CreateCategory = () => {
             <Modal
               onCancel={() => setVisible(false)}
               footer={null}
-              visible={visible}
+              open={visible}
             >
               <CategoryForm
                 value={updatedName}
