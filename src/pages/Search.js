@@ -4,7 +4,7 @@ import { useSearch } from "../context/search";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const [values, setValues] = useSearch();
+  const [values] = useSearch();
   const navigate = useNavigate();
   return (
     <Layout title={"Search results"}>

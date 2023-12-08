@@ -4,7 +4,6 @@ import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
 import DropIn from "braintree-web-drop-in-react";
-// import { AiFillWarning } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "../styles/CartStyles.css";
@@ -21,9 +20,10 @@ const CartPage = () => {
   const totalPrice = () => {
     try {
       let total = 0;
-      cart?.map((item) => {
+      cart?.forEach((item) => {
         total = total + item.price;
       });
+  
       return total.toLocaleString("en-US", {
         style: "currency",
         currency: "INR",
@@ -66,7 +66,9 @@ const CartPage = () => {
       const { data } = await axios.post("https://e-commerce-backend-d4y8.onrender.com/api/product/braintree/payment", {
         nonce,
         cart,
+        
       });
+      console.log(data)
       setLoading(false);
       localStorage.removeItem("cart");
       setCart([]);
