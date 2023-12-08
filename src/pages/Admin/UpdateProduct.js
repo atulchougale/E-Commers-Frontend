@@ -94,6 +94,7 @@ const UpdateProduct = () => {
       const { data } = await axios.delete(
         `https://e-commerce-backend-d4y8.onrender.com/api/product/delete-product/${id}`
       );
+      console.log(data)
       toast.success("Product DEleted Successfully");
       navigate("/dashboard/admin/products");
     } catch (error) {
