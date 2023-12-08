@@ -10,7 +10,7 @@ const Orders = () => {
   const [auth] = useAuth();
   const getOrders = async () => {
     try {
-      const { data } = await axios.get("/api/auth/orders");
+      const { data } = await axios.get("https://e-commerce-backend-d4y8.onrender.com/api/auth/orders");
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -59,7 +59,7 @@ const Orders = () => {
                       <div className="row mb-2 p-3 card flex-row" key={p._id}>
                         <div className="col-md-4">
                           <img
-                            src={`/api/product/product-photo/${p._id}`}
+                            src={`https://e-commerce-backend-d4y8.onrender.com/api/product/product-photo/${p._id}`}
                             className="card-img-top"
                             alt={p.name}
                             width="100px"

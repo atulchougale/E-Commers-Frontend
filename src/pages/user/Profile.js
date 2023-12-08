@@ -27,7 +27,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("/api/auth/profile", {
+      const { data } = await axios.put("https://e-commerce-backend-d4y8.onrender.com/api/auth/profile", {
         name,
         email,
         password,

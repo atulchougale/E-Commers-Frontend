@@ -12,7 +12,7 @@ const Users = () => {
 
   const getUsers = async () => {
     try {
-      const { data } = await axios.get("/api/auth/all-users");
+      const { data } = await axios.get("https://e-commerce-backend-d4y8.onrender.com/api/auth/all-users");
       setUsers(data);
 
     } catch (error) {

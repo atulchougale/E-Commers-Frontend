@@ -17,7 +17,7 @@ const CategoryProduct = () => {
   const getProductsByCat = async () => {
     try {
       const { data } = await axios.get(
-        `/api/product/product-category/${params.slug}`
+        `https://e-commerce-backend-d4y8.onrender.com/api/product/product-category/${params.slug}`
       );
       setProducts(data?.products);
       setCategory(data?.category);
@@ -37,7 +37,7 @@ const CategoryProduct = () => {
               {products?.map((p) => (
                 <div className="card m-2" key={p._id}>
                   <img
-                    src={`/api/product/product-photo/${p._id}`}
+                    src={`https://e-commerce-backend-d4y8.onrender.com/api/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />

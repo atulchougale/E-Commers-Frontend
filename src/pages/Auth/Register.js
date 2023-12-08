@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
     
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axios.post("https://e-commerce-backend-d4y8.onrender.com/api/auth/register", {
         name,
         email,
         password,

@@ -1,6 +1,6 @@
 {
   "name": "e-commerce",
-  "proxy": "http://localhost:8080",
+  "proxy": "https://e-commerce-backend-d4y8.onrender.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

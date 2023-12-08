@@ -16,7 +16,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/auth/forgot-password", {
+      const res = await axios.post("https://e-commerce-backend-d4y8.onrender.com/api/auth/forgot-password", {
         email,
         newPassword,
         answer,

@@ -18,7 +18,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/category/create-category", {
+      const { data } = await axios.post("https://e-commerce-backend-d4y8.onrender.com/api/category/create-category", {
         name,
       });
       if (data?.success) {
@@ -36,7 +36,7 @@ const CreateCategory = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get("/api/category/get-category");
+      const { data } = await axios.get("https://e-commerce-backend-d4y8.onrender.com/api/category/get-category");
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -55,7 +55,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `/api/category/update-category/${selected._id}`,
+        `https://e-commerce-backend-d4y8.onrender.com/api/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data?.success) {
@@ -76,7 +76,7 @@ const CreateCategory = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `/api/category/delete-category/${pId}`
+        `https://e-commerce-backend-d4y8.onrender.com/api/category/delete-category/${pId}`
       );
       if (data.success) {
         toast.success(`category is deleted`);
