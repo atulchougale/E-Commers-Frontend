@@ -37,6 +37,7 @@ const AdminOrders = () => {
       const { data } = await axios.put(`https://e-commerce-backend-d4y8.onrender.com/api/auth/order-status/${orderId}`, {
         status: value,
       });
+      console.log(data)
       getOrders();
     } catch (error) {
       console.log(error);

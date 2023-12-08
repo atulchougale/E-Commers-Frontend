@@ -95,7 +95,7 @@ const HomePage = () => {
 
   useEffect(() => {
     if (checked.length || radio.length) filterProduct();
-  }, [checked, radio]);
+  }, [checked, radio,]);
 
   // get filtered product
   const filterProduct = async () => {
