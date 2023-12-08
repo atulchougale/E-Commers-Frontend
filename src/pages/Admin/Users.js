@@ -3,12 +3,12 @@ import AdminMenu from "./../../components/layout/AdminMenu";
 import Layout from "./../../components/layout/Layout";
 import axios from "axios";
 import { useAuth } from "../../context/auth";
-import moment from "moment";
+
 
 const Users = () => {
 
   const [users, setUsers] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth, ] = useAuth();
 
   const getUsers = async () => {
     try {

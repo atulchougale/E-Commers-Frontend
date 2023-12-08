@@ -9,7 +9,7 @@ import { Select } from "antd";
 const { Option } = Select;
 
 const AdminOrders = () => {
-  const [status, setStatus] = useState([
+  const [status, ] = useState([
     "Not Process",
     "Processing",
     "Shipped",
@@ -18,7 +18,7 @@ const AdminOrders = () => {
   ]);
 //   const [changeStatus, setCHangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth, ] = useAuth();
   const getOrders = async () => {
     try {
       const { data } = await axios.get("/api/auth/all-orders");
